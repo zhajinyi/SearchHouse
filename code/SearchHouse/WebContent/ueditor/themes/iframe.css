@@ -1,0 +1,17 @@
+img {
+max-width: 200px; /*Í¼Æ¬×ÔÊÊÓ¦¿í¶È*/
+}
+body {
+overflow-y: scroll !important;
+}
+.view {
+word-break: break-all;
+}
+.vote_area {
+display: block;
+}
+.vote_iframe {
+background-color: transparent;
+border: 0 none;
+height: 100px;
+}

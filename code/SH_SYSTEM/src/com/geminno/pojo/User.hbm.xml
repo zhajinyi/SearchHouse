@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-8 18:55:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.geminno.pojo.User" table="userinfo">
+        <id name="userId" type="java.lang.String">
+            <column name="USER_ID" />
+            <generator class="native" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="USER_NAME" />
+        </property>
+        <property name="userPassword" type="java.lang.String">
+            <column name="USER_PASSWORD" />
+        </property>
+        <property name="phoneNumber" type="java.lang.String">
+            <column name="PHONE_NUMBER" />
+        </property>
+        <property name="userMail" type="java.lang.String">
+            <column name="USER_MAIL" />
+        </property>
+        <property name="realName" type="java.lang.String">
+            <column name="REAL_NAME" />
+        </property>
+        <property name="userSex" type="java.lang.String">
+            <column name="USER_SEX" />
+        </property>
+        <property name="userAge" type="java.lang.Integer">
+            <column name="USER_AGE" />
+        </property>
+        <property name="userCard" type="java.lang.Integer">
+            <column name="USER_CARD" />
+        </property>
+        <property name="userPhoto" type="java.lang.String">
+            <column name="USER_PHOTO" />
+        </property>
+        <property name="userBirthday" type="java.util.Date">
+            <column name="USER_BIRTHDAY" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="userActive" type="java.lang.Integer">
+            <column name="USER_ACTIVE" />
+        </property>
+        
+        
+        <property name="qualityRating" type="java.lang.String">
+            <column name="QUALITY_RATING" />
+        </property>
+     <!--    
+        <set name="houses" table="houseinfo" inverse="false" lazy="false">
+            <key>
+                <column name="USER_ID_FK" />
+            </key>
+            <one-to-many class="com.geminno.pojo.House" />
+        </set>
+        <set name="msgs" table="message" inverse="false" lazy="false">
+            <key>
+                <column name="USER_ID_FK" />
+            </key>
+            <one-to-many class="com.geminno.pojo.Message" />
+        </set> -->
+    </class>
+</hibernate-mapping>

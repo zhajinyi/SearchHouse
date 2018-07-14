@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaobo.mapper.HouseLimitMapper">
+
+	<resultMap type="Limit" id="limitResultMap">
+		<id property="limitIdFk" column="HOUSE_LIMIT_ID" />
+		<result property="limitName" column="LIMIT_TYPE" />
+	</resultMap>
+
+	<select id="getAllLimit" resultMap="limitResultMap">
+		select * from houselimit;
+	</select>
+
+	<select id="getLimitById" resultMap="limitResultMap">
+		select * from houselimit where HOUSE_LIMIT_ID=#{limitIdFk};
+	</select>
+
+</mapper>

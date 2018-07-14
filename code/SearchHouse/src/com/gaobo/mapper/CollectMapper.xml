@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gaobo.mapper.CollectMapper">
+
+	<insert id="addClollect">
+		insert into collect (HOUSE_ID_FK,USER_ID_FK)
+		values(#{houseId},#{userId});
+	</insert>
+
+	<delete id="deleteCollect">
+		delete from collect where HOUSE_ID_FK=#{houseId} and USER_ID_FK=#{userId};
+	</delete>
+
+	<update id="updateCollect" parameterType="Collect">
+		update collect set
+		USER_ID_FK=#{userInfo.userId},HOUSE_ID_FK=#{house.houseId}, where
+		COLLECT_ID=#{collectId};
+	</update>
+
+
+	<resultMap type="Collect" id="CollectResultMap">
+		<id property="collectId" column="COLLECT_ID" />
+		<result property="collectTime" column="COLLECT_TIME" />
+		<association property="house" column="HOUSE_ID_FK" select="getHouseById"></association>
+		<association property="userInfo" column="USER_ID_FK"
+			select="getUserById"></association>
+
+	</resultMap>
+	<select id="getCollectById" resultMap="CollectResultMap">
+		select * from collect where HOUSE_ID_FK=#{houseId} and USER_ID_FK=#{userId};
+	</select>
+	<resultMap type="House" id="HouseResultMap">
+		<id property="houseId" column="HOUSE_ID" />
+		<!-- <result property="houseTypeId" column="HOUSE_TYPE"/> <result property="houseAddress" 
+			column="HOUSE_ADDRESS"/> -->
+		<!-- <result property="locationName" column="LOCALTION_NAME"/> <result 
+			property="houseUnit" column="HOUSE_UNIT"/> <result property="houseFloor" 
+			column="HOUSE_FLOOR"/> <result property="houseFloorTotal" column="HOUSE_FLOOR_TOTAL"/> 
+			<result property="houseArea" column="HOUSE_AREA"/> <result property="otherDeploy" 
+			column="OTHER_DEPLOY"/> <result property="housePrice" column="HOUSE_PRICE"/> -->
+		<result property="houseName" column="HOUSE_NAME" />
+		<result property="detailedIntro" column="DETAILED_INTRO" />
+		<!-- <result property="photo" column="HOUSE_CARD_PHOTO"/> -->
+		<association property="userInfo" column="USER_ID_FK"
+			select="getUserById"></association>
+
+		<!-- <association property="photo" column="PHOTO_ID_FK" javaType="Photo" 
+			select="getStatusById"></association> -->
+
+		<!-- <association property="houseStatus" column="HOUSE_STATUS_ID_FK" select="getUserById"></association> -->
+
+	</resultMap>
+	<select id="getHouseById" parameterType="Integer" resultMap="HouseResultMap">
+		select * from houseinfo where HOUSE_ID=#{houseId};
+	</select>
+
+
+
+	<resultMap type="UserInfo" id="userInfoResultMap">
+		<id property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userPassword" column="USER_PASSWORD" />
+		<result property="telNumber" column="TEL_NUMBER" />
+		<result property="phoneNumber" column="PHONE_NUMBER" />
+		<result property="userMail" column="USER_MAIL" />
+		<result property="realName" column="REAL_NAME" />
+		<result property="userSex" column="USER_SEX" />
+		<result property="userAge" column="USER_AGE" />
+		<result property="userCard" column="USER_CARD" />
+		<result property="userPhoto" column="USER_PHOTO" />
+		<result property="userBirthday" column="USER_BIRTHDAY" />
+		<result property="address" column="ADDRESS" />
+		<result property="homeAddress" column="HOME_ADDRESS" />
+		<result property="userTag" column="USER_TAG" />
+		<result property="qualityRating" column="QUALITY_RATING" />
+
+	</resultMap>
+	<select id="getUserById" resultMap="userInfoResultMap">
+		select * from UserInfo where USER_ID=#{userId};
+	</select>
+
+	<select id="listAllCollect" resultMap="CollectResultMap">
+		select * from collect;
+	</select>
+
+
+
+</mapper>

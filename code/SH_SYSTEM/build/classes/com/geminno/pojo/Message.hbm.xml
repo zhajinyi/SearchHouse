@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-9 11:38:44 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.geminno.pojo.Message" table="message">
+        <id name="msgId" type="java.lang.Integer">
+            <column name="MSGID" />
+            <generator class="assigned" />
+        </id>
+        <property name="msgtitle" type="java.lang.String">
+            <column name="MSG_TITLE" />
+        </property>
+        <property name="msgtot" type="java.lang.String">
+            <column name="MSG_TOT" />
+        </property>
+        <many-to-one name="user" class="com.geminno.pojo.User" fetch="join">
+            <column name="GET_USER_ID" />
+        </many-to-one>
+        <many-to-one name="admin" class="com.geminno.pojo.Admin" fetch="join">
+            <column name="ADMIN_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

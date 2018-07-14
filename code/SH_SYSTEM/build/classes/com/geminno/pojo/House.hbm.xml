@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-8 18:55:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.geminno.pojo.House" table="houseinfo">
+        <id name="houseId" type="java.lang.Integer">
+            <column name="HOUSE_ID" />
+            <generator class="native" />
+        </id>
+        <property name="houseTypeId" type="java.lang.Integer">
+            <column name="HOUSE_TYPE" />
+        </property>
+        <property name="houseAddress" type="java.lang.String">
+            <column name="HOUSE_ADDRESS" />
+        </property>
+        <property name="locationName" type="java.lang.String">
+            <column name="LOCATIO_NNAME" />
+        </property>
+        <property name="houseUnit" type="java.lang.String">
+            <column name="HOUSE_UNIT" />
+        </property>
+        <property name="houseFloor" type="java.lang.Integer">
+            <column name="HOUSE_FLOOR" />
+        </property>
+        <property name="houseFloorTotal" type="java.lang.Integer">
+            <column name="HOUSE_FLOOR_TOTAL" />
+        </property>
+        <property name="houseArea" type="java.lang.Integer">
+            <column name="HOUSE_AREA" />
+        </property>
+        <property name="housePrice" type="java.lang.Integer">
+            <column name="HOUSE_PRICE" />
+        </property>
+        <property name="houseName" type="java.lang.String">
+            <column name="HOUSE_NAME" />
+        </property>
+        <property name="detailedIntro" type="java.lang.String">
+            <column name="DETAILED_INTRO" />
+        </property>
+        
+        <many-to-one name="pay" class="com.geminno.pojo.Pay" fetch="join">
+            <column name="PAY_ID" />
+        </many-to-one>
+        <many-to-one name="bedRoom" class="com.geminno.pojo.BedRoom" fetch="join">
+            <column name="BEDROOM_ID_FK" />
+        </many-to-one>
+        <many-to-one name="limit" class="com.geminno.pojo.Limit" fetch="join">
+            <column name="LIMIT_ID_FK" />
+        </many-to-one>
+        <many-to-one name="houseSetType" class="com.geminno.pojo.HouseSetType" fetch="join">
+            <column name="HOUSESET_TYPE_FK" />
+        </many-to-one>
+        <many-to-one name="fitment" class="com.geminno.pojo.Fitment" fetch="join">
+            <column name="FITMENT_ID_FK" />
+        </many-to-one>
+        <many-to-one name="houseStatus" class="com.geminno.pojo.HouseStatus" fetch="join">
+            <column name="HOUSE_STATUS_ID_FK" />
+        </many-to-one>
+        <many-to-one name="user" class="com.geminno.pojo.User" fetch="join">
+            <column name="USER_ID_FK" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

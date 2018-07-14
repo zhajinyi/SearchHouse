@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/css/style1.css=UTF-8
+encoding//WebContent/page/DuiBi.jsp=UTF-8
+encoding//WebContent/page/FaBuXX.jsp=UTF-8
+encoding//WebContent/ueditor/jsp/config.json=UTF-8
+encoding//src/com/gaobo/headler/HouseInfoHeadler.java=UTF-8
+encoding//src/com/gaobo/headler/SendMessHeadler.java=UTF-8
+encoding//src/com/gaobo/mapper/HouseMapper.java=UTF-8
+encoding//src/com/gaobo/pojo/UserInfo.java=GBK
+encoding//src/com/gaobo/service/HouseInfoService.java=UTF-8
+encoding/<project>=GBK

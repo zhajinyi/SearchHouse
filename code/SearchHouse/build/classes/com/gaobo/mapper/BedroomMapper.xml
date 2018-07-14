@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaobo.mapper.BedroomMapper">
+
+	<resultMap type="BedRoom" id="bedroomResultMap">
+		<id property="bedroomIdFk" column="BEDROOM_ID" />
+		<result property="bedroomName" column="BEDROOM_NAME" />
+	</resultMap>
+
+	<select id="getAllBedroom" resultMap="bedroomResultMap">
+		select * from bedroom;
+	</select>
+
+	<select id="getBedRoomById" resultMap="bedroomResultMap">
+		select * from bedroom where BEDROOM_ID=#{bedroomIdFk};
+	</select>
+
+</mapper>
+

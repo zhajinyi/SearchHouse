@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaobo.mapper.IndentMapper">
+	<!-- 增 -->
+	<insert id="addIndent" parameterType="Indent"  useGeneratedKeys="true" keyProperty="indentId">
+		insert into indent(USER_ID_FK,HOUSE_ID_FK,INPHONE,TIME_START,TIME_END)
+		values
+		(#{userInfo.userId},#{house.houseId},#{inPhone},#{timeStart},#{timeEnd});
+	</insert>
+
+	<!-- 查 -->
+	<select id="getIndentByuserID" parameterType="String" resultMap="indentResultMap">
+		select*from indent where USER_ID_FK=#{userInfo.userId};
+	</select>
+	<!-- 删 -->
+
+	<delete id="deleteIndent" parameterType="Integer">
+
+		delete from indent where InDENT_ID=#{indentId};
+	</delete>
+
+
+	<!-- indent与数据库映射字段 -->
+	<resultMap type="Indent" id="indentResultMap">
+		<id property="indentId" column="INDENT_ID" />
+		<result property="timeStart" column="TIME_START" />
+		<result property="timeEnd" column="TIME_END" />
+		<association property="userInfo" column="USER_ID_FK"
+			select="getUserById"></association>
+		<association property="house" column="HOUSE_ID_FK" select="getHouseById"></association>
+	</resultMap>
+
+
+
+	<resultMap type="UserInfo" id="UserInfoResultMap">
+		<id property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+	</resultMap>
+
+	<!-- 根据用户ID查询用户 -->
+	<select id="getUserById" parameterType="String" resultMap="UserInfoResultMap">
+		select*from userinfo where USER_ID=#{userId};
+	</select>
+
+	<!-- 根据房屋ID查找房屋 -->
+	<select id="getHouseById" parameterType="Integer" resultMap="HouseResultMap">
+		select*from houseinfo where HOUSE_ID=#{houseId};
+	</select>
+
+
+	<!-- house与数据库映射字段 房屋标题和地址 -->
+	<resultMap type="House" id="HouseResultMap">
+		<id property="houseId" column="HOUSE_ID" />
+		<result property="houseName" column="HOUSE_NAME" />
+		<result property="housePrice" column="HOUSE_PRICE" />
+	</resultMap>
+
+</mapper>

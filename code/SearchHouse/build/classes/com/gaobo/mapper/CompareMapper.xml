@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gaobo.mapper.CompareMapper">
+
+	<insert id="addCompare" parameterType="Compare">
+		insert into compare
+		(HOUSE_ID_FK) values(#{house.houseId});
+	</insert>
+
+	<delete id="deleteCompare" parameterType="Integer">
+		delete from compare
+		where COMPARE_ID = #{compareId};
+	</delete>
+
+	<select id="getAllCompare" resultMap="CompareResultMap">
+		select * from compare;
+	</select>
+
+	<resultMap type="Compare" id="CompareResultMap">
+		<id property="compareId" column="COMPARE_ID" />
+		<association property="house" column="HOUSE_ID_FK" select="getHouseById"></association>
+	</resultMap>
+
+	<select id="getHouseById" parameterType="Integer" resultMap="HouseResultMap">
+		select * from houseinfo where HOUSE_ID=#{houseId};
+	</select>
+
+	<resultMap type="House" id="HouseResultMap">
+		<id property="houseId" column="HOUSE_ID" />
+		<result property="houseTypeId" column="HOUSE_TYPE" />
+		<result property="houseAddress" column="HOUSE_ADDRESS" />
+		<result property="locationName" column="LOCALTION_NAME" />
+		<result property="houseUnit" column="HOUSE_UNIT" />
+		<result property="houseFloor" column="HOUSE_FLOOR" />
+		<result property="houseFloorTotal" column="HOUSE_FLOOR_TOTAL" />
+		<result property="houseArea" column="HOUSE_AREA" />
+		<result property="otherDeploy" column="OTHER_DEPLOY" />
+		<result property="housePrice" column="HOUSE_PRICE" />
+		<result property="houseName" column="HOUSE_NAME" />
+		<result property="detailedIntro" column="DETAILED_INTRO" />
+
+		<association property="fitment" column="FITMENT_ID_FK"
+			select="getFitmentById"></association>
+		<association property="pay" column="PAY_ID" select="getPayById"></association>
+
+
+	</resultMap>
+	<!--状支付 -->
+	<resultMap type="Pay" id="PayResultMap">
+		<id property="payId" column="PAY_ID" />
+		<result property="payName" column="PAY_TYPE" />
+	</resultMap>
+	<select id="getPayById" parameterType="Integer" resultMap="PayResultMap">
+		select * from pay where PAY_ID=#{payId};
+	</select>
+
+	<!-- 装修 -->
+	<resultMap type="Fitment" id="fitmentResultMap">
+		<id property="fitmentId" column="FITMENT_ID" />
+		<result property="fitmentName" column="FITMENT_TYPE" />
+	</resultMap>
+	<select id="getFitmentById" parameterType="Integer" resultMap="fitmentResultMap">
+		select * from fitment where FITMENT_ID=#{fitmentId};
+	</select>
+</mapper>

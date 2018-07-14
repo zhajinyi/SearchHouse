@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaobo.mapper.HouseSetTypeMapper">
+
+	<resultMap type="HouseSetType" id="hSetTypeResultMap">
+		<id property="houseSetTypeId" column="HOUSESET_TYPE_ID" />
+		<result property="houseSetTypeName" column="HOUSESET_TYPE_NAME" />
+	</resultMap>
+
+	<select id="getAllHouseType" resultMap="hSetTypeResultMap">
+		select * from housesettype;
+	</select>
+
+	<select id="getHouseSetTypeById" resultMap="hSetTypeResultMap">
+		select * from housesettype where HOUSESET_TYPE_ID=#{houseSetTypeId};
+	</select>
+
+</mapper>
+

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaobo.mapper.HouseMapper">
+
+	<resultMap type="UserInfo" id="userInfoResultMap">
+		<id property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userPassword" column="USER_PASSWORD" />
+		<result property="telNumber" column="TEL_NUMBER" />
+		<result property="phoneNumber" column="PHONE_NUMBER" />
+		<result property="userMail" column="USER_MAIL" />
+		<result property="realName" column="REAL_NAME" />
+		<result property="userSex" column="USER_SEX" />
+		<result property="userAge" column="USER_AGE" />
+		<result property="userCard" column="USER_CARD" />
+		<result property="userPhoto" column="USER_PHOTO" />
+		<result property="userBirthday" column="USER_BIRTHDAY" />
+		<result property="address" column="ADDRESS" />
+		<result property="homeAddress" column="HOME_ADDRESS" />
+		<result property="userTag" column="USER_TAG" />
+		<result property="qualityRating" column="QUALITY_RATING" />
+	</resultMap>
+	<resultMap type="House" id="HouseResultMap">
+		<id property="houseId" column="HOUSE_ID" />
+		<result property="houseTypeId" column="HOUSE_TYPE" />
+		<result property="houseAddress" column="HOUSE_ADDRESS" />
+		<result property="locationName" column="LOCALTION_NAME" />
+		<result property="houseUnit" column="HOUSE_UNIT" />
+		<result property="houseFloor" column="HOUSE_FLOOR" />
+		<result property="houseFloorTotal" column="HOUSE_FLOOR_TOTAL" />
+		<result property="houseArea" column="HOUSE_AREA" />
+		<result property="housePrice" column="HOUSE_PRICE" />
+		<result property="houseName" column="HOUSE_NAME" />
+		<result property="detailedIntro" column="DETAILED_INTRO" />
+		<result property="photo" column="HOUSE_CARD_PHOTO" />
+		<result property="collectNum" column="COLLECT_NUM" />
+		<!-- <association property="photo" column="PHOTO_ID_FK" javaType="Photo" 
+			select="getStatusById"></association> -->
+
+		<!-- <association property="houseStatus" column="HOUSE_STATUS_ID_FK" select="getUserById"></association> -->
+		<association property="houseStatus" column="HOUSE_STATUS_ID_FK"
+			select="getStatusById"></association>
+		<association property="fitment" column="FITMENT_ID_FK"
+			select="getFitmentById"></association>
+		<association property="houseSetType" column="HOUSESET_TYPE_FK"
+			select="getHouseSetTypeById"></association>
+		<association property="limit" column="LIMIT_ID_FK" select="getLimitById"></association>
+		<association property="bedRoom" column="BEDROOM_ID_FK"
+			select="getBedroomById"></association>
+		<association property="userInfo" column="USER_ID_FK"
+			select="getUserById"></association>
+		<association property="pay" column="PAY_ID" select="getPayById"></association>
+
+		<collection property="priceContains" column="HOUSE_ID"
+			ofType="String" select="getPri"></collection>
+		<collection property="photos" column="HOUSE_ID" ofType="String"
+			select="getPho"></collection>
+
+	</resultMap>
+	<select id="getPri" parameterType="Integer" resultType="String">
+		select
+		PRICE_CONTAIN_NAME from pricecontain where HOUSE_ID=#{houseId}
+	</select>
+
+	<!-- <select id="getPho" parameterType="Integer" resultMap="PhotoResultMap"> -->
+	<select id="getPho" parameterType="Integer" resultType="String">
+		<!-- select * from photo where HOUSE_ID=#{houseId} -->
+		select PHOTO_NAME from photo where HOUSE_ID=#{houseId}
+	</select>
+
+	<resultMap type="Photo" id="PhotoResultMap">
+		<id property="photoId" column="PHOTO_ID" />
+		<id property="houseId" column="HOUSE_ID" />
+		<result property="photoName" column="PHOTO_NAME" />
+	</resultMap>
+
+	<select id="getUserById" parameterType="String" resultMap="userInfoResultMap">
+		select * from userinfo where USER_ID=#{userId};
+	</select>
+
+	<!--状支付 -->
+	<resultMap type="Pay" id="PayResultMap">
+		<id property="payId" column="PAY_ID" />
+		<result property="payName" column="PAY_TYPE" />
+	</resultMap>
+	<select id="getPayById" parameterType="Integer" resultMap="PayResultMap">
+		select * from pay where PAY_ID=#{payId};
+	</select>
+
+
+	<!--状态 -->
+	<resultMap type="HouseStatus" id="StatusResultMap">
+		<id property="houseStatusId" column="HOUSE_STATUS_ID" />
+		<result property="houseStatusName" column="HOUSE_STATUS_NAME" />
+	</resultMap>
+	<select id="getStatusById" parameterType="Integer" resultMap="StatusResultMap">
+		select * from housestatus where HOUSE_STATUS_ID=#{houseStatusId};
+	</select>
+
+
+	<!-- 商品房。。。。 -->
+	<resultMap type="HouseSetType" id="HouseSetResultMap">
+		<id property="houseSetTypeId" column="HOUSESET_TYPE_ID" />
+		<result property="houseSetTypeName" column="HOUSESET_TYPE_NAME" />
+	</resultMap>
+	<select id="getHouseSetTypeById" parameterType="Integer"
+		resultMap="HouseSetResultMap">
+		select * from housesettype where
+		HOUSESET_TYPE_ID=#{houseSetTypeId};
+	</select>
+
+
+
+	<!-- 卧室 -->
+	<resultMap type="BedRoom" id="bedroonResultMap">
+		<id property="bedroomIdFk" column="BEDROOM_ID" />
+		<result property="bedroomName" column="BEDROOM_NAME" />
+	</resultMap>
+	<select id="getBedroomById" parameterType="Integer" resultMap="bedroonResultMap">
+		select * from bedroom where BEDROOM_ID=#{bedroomIdFk};
+	</select>
+
+
+	<!-- 装修 -->
+	<resultMap type="Fitment" id="fitmentResultMap">
+		<id property="fitmentId" column="FITMENT_ID" />
+		<result property="fitmentName" column="FITMENT_TYPE" />
+	</resultMap>
+	<select id="getFitmentById" parameterType="Integer" resultMap="fitmentResultMap">
+		select * from fitment where FITMENT_ID=#{fitmentId};
+	</select>
+
+
+	<!-- 限制 -->
+	<resultMap type="Limit" id="limitResultMap">
+		<id property="limitIdFk" column="HOUSE_LIMIT_ID" />
+		<result property="limitName" column="LIMIT_TYPE" />
+	</resultMap>
+	<select id="getLimitById" parameterType="Integer" resultMap="limitResultMap">
+		select * from houselimit where HOUSE_LIMIT_ID=#{limitIdFk};
+	</select>
+
+	<insert id="addHouse" parameterType="House" useGeneratedKeys="true"
+		keyProperty="houseId">
+		insert into
+		houseinfo(HOUSE_STATUS_ID_FK,HOUSE_TYPE,LOCALTION_NAME,HOUSE_UNIT,HOUSE_ADDRESS,HOUSE_AREA,LIMIT_ID_FK,FITMENT_ID_FK,BEDROOM_ID_FK,HOUSESET_TYPE_FK,HOUSE_FLOOR,HOUSE_FLOOR_TOTAL,HOUSE_PRICE,PAY_ID,HOUSE_NAME,DETAILED_INTRO,HOUSE_CARD_PHOTO,USER_ID_FK)
+		values(2,#{houseTypeId},#{locationName},#{houseUnit},#{houseAddress},#{houseArea},#{limit.limitIdFk},#{fitment.fitmentId},#{bedRoom.bedroomIdFk},#{houseSetType.houseSetTypeId},#{houseFloor},#{houseFloorTotal},#{housePrice},#{pay.payId},#{houseName},#{detailedIntro},#{photo},#{userInfo.userId});
+
+	</insert>
+
+	<select id="getHouseById" parameterType="Integer" resultMap="HouseResultMap">
+		select * from houseinfo where HOUSE_ID=#{houseId} and
+		HOUSE_STATUS_ID_FK=1;
+	</select>
+
+	<!-- zjy,新增 -->
+	<select id="getHouseByUserID" parameterType="String" resultMap="HouseResultMap">
+		select * from houseinfo where USER_ID_FK=#{UserInfo.userId};
+	</select>
+
+	<!-- 获取所有房源 状态为审核过的 HOUSE_STATUS_ID=1 -->
+	<select id="getAllHouses" resultMap="HouseResultMap">
+		select * from houseinfo
+		where HOUSE_STATUS_ID_FK=1;
+	</select>
+
+	<!-- 分页 每页10条 状态为1的房子 -->
+	<select id="getHouseByNum" parameterType="Integer" resultMap="HouseResultMap">
+		select * from houseinfo where HOUSE_STATUS_ID_FK=1 limit #{number},9 ;
+	</select>
+
+	<delete id="deleteHouse" parameterType="Integer">
+		delete from houseinfo
+		where HOUSE_ID=#{houseId}
+	</delete>
+	<update id="updateHouse" parameterType="House">
+		update houseinfo set
+		COLLECT_NUM=#{collectNum} where HOUSE_ID=#{houseId};
+	</update>
+
+	<!--模糊搜索 取出所有的模糊搜索的房屋 -->
+	<select id="getHouseByKeyAll" resultMap="HouseResultMap">
+		select * from houseinfo
+		where HOUSE_STATUS_ID_FK=1 and HOUSE_NAME like "%"#{keyName}"%" or
+		LOCALTION_NAME like "%"#{keyName}"%";
+	</select>
+	<!-- 模糊搜索 -->
+	<select id="getHouseByKey" resultMap="HouseResultMap">
+		select * from houseinfo
+		where HOUSE_STATUS_ID_FK=1 and HOUSE_NAME like "%"#{keyName}"%" or
+		LOCALTION_NAME like "%"#{keyName}"%" or HOUSE_ADDRESS like
+		"%"#{keyName}"%" limit #{number},9;
+	</select>
+
+	<!-- 根据房屋类别查询 品牌公寓 -->
+	<select id="getHouseByType" parameterType="Integer" resultMap="HouseResultMap">
+		select*from houseinfo where HOUSE_STATUS_ID_FK=1 and
+		HOUSESET_TYPE_FK=1 limit #{number},9;
+	</select>
+
+	<select id="getByType" resultMap="HouseResultMap">
+		select*from houseinfo where HOUSE_STATUS_ID_FK=1 and HOUSESET_TYPE_FK=1;
+	</select>
+	<!--品牌公寓 查询所有的房屋列表 获取总记录条数 -->
+	<select id="getHouseByTypeAll" resultMap="HouseResultMap">
+		select*from houseinfo where HOUSE_STATUS_ID_FK=1 and HOUSESET_TYPE_FK=1;
+	</select>
+
+	<!-- 多条件查询 -->
+	<select id="getHouseMoHuAll" parameterType="ShaiXuan" resultMap="HouseResultMap">
+		select * from houseinfo
+		<where>
+			HOUSE_STATUS_ID_FK=1
+			<if test="v1!=null  ">
+				and HOUSE_ADDRESS like "%"#{v1}"%"
+			</if>
+			<if test="v2!=null ">
+				and HOUSE_PRICE between #{v2} and #{v21}
+			</if>
+			<if test="v3!=null">
+				and HOUSE_UNIT=#{v3}
+			</if>
+			<if test="v4!=null">
+				and FITMENT_ID_FK = #{v4}
+			</if>
+		</where>
+	</select>
+
+
+
+
+</mapper>
