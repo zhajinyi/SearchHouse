@@ -31,7 +31,7 @@
    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
      <property name="dataSource" ref="dataSource"></property>
      <!-- 别名的包 -->
-     <property name="typeAliasesPackage" value="com.gaobo.pojo"></property>
+     <property name="typeAliasesPackage" value="com.SearchHouse.pojo"></property>
    
    </bean>
    
@@ -59,7 +59,7 @@
   <!-- dao接口所在包名，可以直接注入数据映射接口到service层中；mybatis-spring会创建接口的代理类注入-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
        <!-- mapper接口的包路径 -->
-        <property name="basePackage" value="com.gaobo.mapper" />  
+        <property name="basePackage" value="com.SearchHouse.mapper" />  
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" ></property>  
     </bean>  
   

@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.io.IOException;
 import java.util.Date;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.gaobo.pojo.UserInfo;
+import com.SearchHouse.pojo.UserInfo;
 
 @Controller
 public class EmailBindHandler {

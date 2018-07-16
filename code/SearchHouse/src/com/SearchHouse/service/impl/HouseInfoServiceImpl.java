@@ -1,4 +1,4 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import java.util.List;
 
@@ -7,14 +7,14 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.HouseMapper;
-import com.gaobo.mapper.PhotoMapper;
-import com.gaobo.mapper.PriceContainsMapper;
-import com.gaobo.pojo.House;
-import com.gaobo.pojo.Photo;
-import com.gaobo.pojo.PriceContain;
-import com.gaobo.pojo.ShaiXuan;
-import com.gaobo.service.HouseInfoService;
+import com.SearchHouse.mapper.HouseMapper;
+import com.SearchHouse.mapper.PhotoMapper;
+import com.SearchHouse.mapper.PriceContainsMapper;
+import com.SearchHouse.pojo.House;
+import com.SearchHouse.pojo.Photo;
+import com.SearchHouse.pojo.PriceContain;
+import com.SearchHouse.pojo.ShaiXuan;
+import com.SearchHouse.service.HouseInfoService;
 
 @Service
 @Transactional

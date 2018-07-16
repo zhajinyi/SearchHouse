@@ -1,8 +1,8 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
-import com.gaobo.pojo.Limit;
+import com.SearchHouse.pojo.Limit;
 
 public interface HouseLimitService {
 	public List<Limit> getAllLimit();

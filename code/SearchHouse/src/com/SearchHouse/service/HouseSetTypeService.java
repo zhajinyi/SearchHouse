@@ -1,8 +1,8 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
-import com.gaobo.pojo.HouseSetType;
+import com.SearchHouse.pojo.HouseSetType;
 
 public interface HouseSetTypeService {
 	public List<HouseSetType> getAllHouseType();

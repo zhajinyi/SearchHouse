@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.io.IOException;
 import java.util.Map;
@@ -16,20 +16,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.gaobo.pojo.UserInfo;
+import com.SearchHouse.pojo.UserInfo;
 
 @Controller
 public class SendMessHeadler {
 	@RequestMapping(value = "/sendPhone", method = RequestMethod.POST)
 	public void sendPhone(UserInfo user, Map<String, Object> map, HttpServletRequest request,
 			HttpServletResponse response) {
-		// 从jsp页面获取注册的手机号码
+		// 从jsp页面获取注册的手机号�?
 		String phone = request.getParameter("phoneNumber");
 		// 设置响应格式UTF8
 		response.setCharacterEncoding("UTF-8");
-		// 获取验证码
+		// 获取验证�?
 		String code = getCode(request);
-		// 发送短信
+		// 发�?�短�?
 		try {
 			sendMsg(phone, code);
 
@@ -40,7 +40,7 @@ public class SendMessHeadler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			// Response对象之Flush方法，立即发送缓冲区中的输出。
+			// Response对象之Flush方法，立即发送缓冲区中的输出�?
 			try {
 				response.flushBuffer();
 			} catch (IOException e) {
@@ -54,13 +54,13 @@ public class SendMessHeadler {
 		HttpClient client = new HttpClient();
 		// client.getParams().setContentCharset("UTF-8");
 		PostMethod post = new PostMethod("http://106.ihuyi.com/webservice/sms.php?method=Submit");
-		post.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");// 在头文件中设置转码
-		String content = new String("您的验证码是：" + code + "。请不要把验证码泄露给其他人。");
+		post.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");// 在头文件中设置转�?
+		String content = new String("您的验证码是�?" + code + "。请不要把验证码泄露给其他人�?");
 		NameValuePair[] data = { new NameValuePair("account", "C31563223"),
 				new NameValuePair("password", "1585d4a3498324994fe581f3ac639b02"), new NameValuePair("mobile", phone), // 手机号码
 				new NameValuePair("content", content) };// 短信内容
 		post.setRequestBody(data);
-		// http://106.ihuyi.com/webservice/sms.php?method=Submit&account=用户名&password=APIKEY&mobile=手机号码&content=您的验证码是：1234。请不要把验证码泄露给其他人。
+		// http://106.ihuyi.com/webservice/sms.php?method=Submit&account=用户�?&password=APIKEY&mobile=手机号码&content=您的验证码是�?1234。请不要把验证码泄露给其他人�?
 
 		// 提交
 		client.executeMethod(post);
@@ -71,7 +71,7 @@ public class SendMessHeadler {
 	}
 
 	/*
-	 * 生成验证码
+	 * 生成验证�?
 	 */
 	private String getCode(HttpServletRequest request) {
 		Random rand = new Random();

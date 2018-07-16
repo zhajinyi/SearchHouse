@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,11 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gaobo.pojo.Compare;
-import com.gaobo.pojo.House;
-import com.gaobo.service.CompareService;
-import com.gaobo.service.House2Service;
-import com.gaobo.service.HouseInfoService;
+import com.SearchHouse.pojo.Compare;
+import com.SearchHouse.pojo.House;
+import com.SearchHouse.service.CompareService;
+import com.SearchHouse.service.House2Service;
+import com.SearchHouse.service.HouseInfoService;
 import com.google.gson.Gson;
 
 @Controller

@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.util.List;
 import java.util.Map;
@@ -10,11 +10,12 @@ import org.springframework.aop.target.HotSwappableTargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.gaobo.pojo.House;
-import com.gaobo.pojo.Indent;
-import com.gaobo.pojo.UserInfo;
-import com.gaobo.service.HouseInfoService;
-import com.gaobo.service.IndentService;
+
+import com.SearchHouse.pojo.House;
+import com.SearchHouse.pojo.Indent;
+import com.SearchHouse.pojo.UserInfo;
+import com.SearchHouse.service.HouseInfoService;
+import com.SearchHouse.service.IndentService;
 import com.mysql.jdbc.interceptors.SessionAssociationInterceptor;
 
 /**

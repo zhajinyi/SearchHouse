@@ -1,4 +1,4 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.HouseLimitMapper;
-import com.gaobo.pojo.Limit;
-import com.gaobo.service.HouseLimitService;
+import com.SearchHouse.mapper.HouseLimitMapper;
+import com.SearchHouse.pojo.Limit;
+import com.SearchHouse.service.HouseLimitService;
 
 @Service
 @Transactional

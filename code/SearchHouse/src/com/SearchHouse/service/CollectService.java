@@ -1,10 +1,10 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.gaobo.pojo.Collect;
+import com.SearchHouse.pojo.Collect;
 
 public interface CollectService {
 

@@ -1,11 +1,11 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.pojo.Orders;
+import com.SearchHouse.pojo.Orders;
 
 public interface OrdersService {
 	public void addOrder(Orders order);

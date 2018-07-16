@@ -1,4 +1,4 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.FitmentMapper;
-import com.gaobo.pojo.Fitment;
-import com.gaobo.service.FitmentService;
+import com.SearchHouse.mapper.FitmentMapper;
+import com.SearchHouse.pojo.Fitment;
+import com.SearchHouse.service.FitmentService;
 
 @Service
 @Transactional

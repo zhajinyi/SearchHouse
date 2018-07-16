@@ -1,8 +1,8 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
-import com.gaobo.pojo.Compare;
+import com.SearchHouse.pojo.Compare;
 
 public interface CompareService {
 

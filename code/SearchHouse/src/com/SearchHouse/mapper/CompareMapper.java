@@ -1,8 +1,8 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
 import java.util.List;
 
-import com.gaobo.pojo.Compare;
+import com.SearchHouse.pojo.Compare;
 
 public interface CompareMapper {
 

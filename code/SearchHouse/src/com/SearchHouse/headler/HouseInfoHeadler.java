@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,23 +18,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.gaobo.pojo.BedRoom;
-import com.gaobo.pojo.Fitment;
-import com.gaobo.pojo.UserInfo;
-import com.gaobo.pojo.House;
-import com.gaobo.pojo.HouseSetType;
-import com.gaobo.pojo.Limit;
-import com.gaobo.pojo.Pay;
-import com.gaobo.pojo.ShaiXuan;
-import com.gaobo.pojo.Page;
-import com.gaobo.service.BedroomService;
-import com.gaobo.service.FitmentService;
-import com.gaobo.service.House2Service;
-import com.gaobo.service.HouseInfoService;
-import com.gaobo.service.HouseLimitService;
-import com.gaobo.service.HouseSetTypeService;
-import com.gaobo.service.PayService;
-import com.gaobo.service.UserInfoService;
+import com.SearchHouse.pojo.BedRoom;
+import com.SearchHouse.pojo.Fitment;
+import com.SearchHouse.pojo.House;
+import com.SearchHouse.pojo.HouseSetType;
+import com.SearchHouse.pojo.Limit;
+import com.SearchHouse.pojo.Page;
+import com.SearchHouse.pojo.Pay;
+import com.SearchHouse.pojo.ShaiXuan;
+import com.SearchHouse.pojo.UserInfo;
+import com.SearchHouse.service.BedroomService;
+import com.SearchHouse.service.FitmentService;
+import com.SearchHouse.service.House2Service;
+import com.SearchHouse.service.HouseInfoService;
+import com.SearchHouse.service.HouseLimitService;
+import com.SearchHouse.service.HouseSetTypeService;
+import com.SearchHouse.service.PayService;
+import com.SearchHouse.service.UserInfoService;
 import com.google.gson.Gson;
 
 @Controller
@@ -137,7 +137,7 @@ public class HouseInfoHeadler {
 
 		List<String> photos = house.getPhotos();
 		UserInfo userInfo = userInfoService.getUserById(userId);
-		String path = "C:/Users/Hawk/Desktop/妞ゅ湱娲伴弬鍥︽/Java EE/SearchHouse/WebContent/img/";
+		String path = "C:/Users/Hawk/Desktop/妞ゅ湱娲伴弬鍥︽�?/Java EE/SearchHouse/WebContent/img/";
 		String fileName = file.getOriginalFilename();
 		house.setPhoto(fileName);
 		house.setUserInfo(userInfo);
@@ -153,7 +153,7 @@ public class HouseInfoHeadler {
 		// MultipartFile閿熺殕杈炬嫹閿熶茎鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷�
 		file.transferTo(dir);
 		if (files != null && files.length > 0) {
-			// 寰敓鏂ゆ嫹閿熸枻鎷峰彇file閿熸枻鎷烽敓鏂ゆ嫹閿熷彨纰夋嫹閿熶茎纭锋嫹
+			// 寰敓鏂ゆ嫹閿熸枻鎷峰彇file閿熸枻鎷烽敓鏂ゆ嫹閿熷彨纰夋嫹閿熶茎纭锋�?
 			for (int i = 0; i < files.length; i++) {
 				MultipartFile f = files[i];
 				// 閿熷彨璁规嫹閿熶茎纭锋嫹閿熻鍑ゆ嫹涓洪敓鏂ゆ嫹
@@ -246,61 +246,61 @@ public class HouseInfoHeadler {
 		return "/UserCenter/UserInfo/Release/DatedInfo";
 	}
 
-	// 濠碘槅鍨界换婵嬪极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙偪椤栵絽娈�
-	// 闂備浇娉曢崰鎰亹椤旀儳鏋堝璺侯儏椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇旑槹鎼存稐绮�
+	// 濠碘槅鍨界换婵嬪极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙偪椤栵絽娈�?
+	// 闂備浇娉曢崰鎰亹椤�?儳鏋堝璺侯儏椤忓爼姊虹捄銊ユ�?�闁哄顭烽獮蹇旑槹鎼存稐绮�?
 	// 闂備浇娉曢崰鎰亹椤旂偓瀚氱憸搴ｏ拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�
-	// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呭摜绱掗弮鎴濆绩妞ゆ洘绮撻獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�
-	// 闂備浇娉曢崰鎰板几婵犳艾绠瀣缁绢垶姊虹捄銊ユ瀾闁哄顭烽獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈢粙鍨槻缂佺偓婢橀ˇ鎵拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇茬煑妞ゆ劑鍨瑰▓鈺呮煙閻戣姤鏁辩紒顭掓嫹
+	// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呭摜绱掗弮鎴濆绩妞ゆ洘绮撻獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�?
+	// 闂備浇娉曢崰鎰板几婵犳艾绠�?�缁绢垶姊虹捄銊ユ�?�闁哄顭烽獮蹇涙�?�閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈢粙鍨槻缂佺偓婢橀ˇ鎵拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇茬煑妞ゆ劑鍨瑰▓鈺呮煙閻戣姤鏁辩紒顭掓�?
 	@RequestMapping("/getHouseByKey")
 	public String getHouseByKey(String keyName, Map<String, Object> map, Integer pageNo) {
-		// 闂備浇娉曢崰鎰板春閸涱垱鍏滈梺鍨儏椤忓爼姊虹捄銊ユ灆妞ゃ垺绮庨幏鐘侯槼閻庢俺顫夌粙澶娒洪鍛闂佸搫鍊堕崐鏍拷姘炬嫹
+		// 闂備浇娉曢崰鎰板春閸涱垱鍏滈梺鍨儏椤忓爼姊虹捄銊ユ灆妞ゃ垺绮庨幏鐘侯槼閻庢俺顫夌粙澶娒洪鍛闂佸搫鍊堕崐鏍拷姘炬�?
 		if (keyName != null) {
 			List<House> houses1 = houseInfoService.getHouseByKeyAll(keyName);
 			Integer number = (pageNo - 1) * 3;
 			List<House> houses = houseInfoService.getHouseByKey(keyName, number);
-			// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌￠崒妯猴拷鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸湱鏌夊〒鍦嫻閻斿吋鐓ラ柣鏂挎啞閻忣噣鏌熼悜鑺ユ暠婵＄儑鎷�
+			// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌￠崒妯猴拷鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸湱鏌夊〒鍦嫻閻斿吋鐓ラ柣鏂挎啞閻忣噣鏌熼悜鑺ユ暠婵＄儑鎷�?
 			if (houses != null) {
 				Integer totalCount = houses1.size();
 				Integer totalPage;
 				if (totalCount % 8 == 0) {
 					totalPage = totalCount / 8;
 				} else {
-					totalPage = (totalCount / 8 + 1); // 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴濐潟閿熻棄顦甸弻銊╂偄閸涘﹦浼勯梺鐟板殩閹凤拷
+					totalPage = (totalCount / 8 + 1); // 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴濐潟閿熻棄顦甸弻銊╂偄閸涘﹦浼勯梺鐟板殩閹凤�?
 														// totalPage
 				}
 				Page page = new Page(totalCount, totalPage, pageNo, houses);
 				map.put("houses", houses);
 				map.put("page", page);
 				return "housebykey";
-				// 婵炴垶鎸诲浠嬪极閹捐妫橀柕鍫濇椤忓爼鏌￠崘鎸庡
-				// 闂備浇娉曢崰鎰板几婵犳艾绠柣銈庡灡缁侇噣姊虹捄銊ユ瀾闁哄顭烽獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇茬煑妞ゆ劧绲介弫楣冩煙閸戙倖瀚�
+				// 婵炴垶鎸诲浠嬪极閹捐妫橀柕鍫濇椤忓爼鏌￠崘鎸庡�?
+				// 闂備浇娉曢崰鎰板几婵犳艾绠柣銈庡灡缁侇噣姊虹捄銊ユ瀾闁哄顭烽獮蹇涙�?�閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇茬煑妞ゆ劧绲介弫楣冩煙閸戙倖�?��
 			} else {
 				return "forward:/houselist";
 			}
-			// 婵炴垶鎸诲浠嬪极閹捐妫橀柕鍫濇椤忓爼鏌￠崘鎸庡
-			// 闂備浇娉曢崰鎰板几婵犳艾绠柣銈庡灡缁侇噣姊虹捄銊ユ瀾闁哄顭烽獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇茬煑妞ゆ劧绲介弫楣冩煙閸戙倖瀚�
+			// 婵炴垶鎸诲浠嬪极閹捐妫橀柕鍫濇椤忓爼鏌￠崘鎸庡�?
+			// 闂備浇娉曢崰鎰板几婵犳艾绠柣銈庡灡缁侇噣姊虹捄銊ユ瀾闁哄顭烽獮蹇涙�?�閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇茬煑妞ゆ劧绲介弫楣冩煙閸戙倖�?��
 		} else {
 			return "forward:/houselist";
 		}
 	}
 
-	// 闂佺绻堥崝鎴﹀极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙煥鐎ｎ剛鍩�
-	// 闂備浇娉曢崰鎰板几婵犳艾绠�瑰嫭婢樼徊鍧楁⒑鐠恒劌鏋戦柡瀣煼楠炲繘鎮滈懞銉︽闂佸憡鐟崑鍡涖�傞锟介獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺瀵剟顢涢悙瀛樻闂佸搫鍊堕崐鏍拷姘愁潐閹便劑宕卞☉娆愭闂佹眹鍔屽Λ鎾箯閿燂拷
-	// 闂備緡鍋呭畝鎼佸极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙倻婵劧鎷锋径濞︽帟绠涘☉鏍垫嫹閿燂拷10闂備浇娉曢崰鎰板几婵犳艾绠柨鐕傛嫹
-	// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌涘▎妯轰簻闁搞倖鐗犻獮蹇涙煥鐎ｎ剛鍩嶉梻浣芥硶閸犲秹鎳犳惔銊ョ闁靛牆妫楅璺侯渻閵堝繑瀚�
+	// 闂佺绻堥崝鎴﹀极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙煥鐎ｎ剛鍩�?
+	// 闂備浇娉曢崰鎰板几婵犳艾绠�瑰嫭婢樼徊鍧楁⒑鐠恒劌鏋戦柡�?�煼楠炲繘鎮滈懞銉︽闂佸憡鐟崑鍡涖�傞锟介獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺瀵剟顢涢悙瀛樻闂佸搫鍊堕崐鏍拷姘愁潐閹便劑宕卞☉娆愭闂佹眹鍔屽Λ鎾箯閿燂�?
+	// 闂備緡鍋呭畝鎼佸极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙�?�婵劧鎷锋径濞︽帟绠涘☉鏍垫嫹閿燂�?10闂備浇娉曢崰鎰板几婵犳艾绠柨鐕傛嫹
+	// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌涘▎妯轰簻闁搞倖鐗犻獮蹇涙煥鐎ｎ剛鍩嶉梻浣芥硶閸犲秹鎳犳惔銊ョ闁靛牆妫楅璺侯渻閵堝繑�?��
 	@RequestMapping("/houseall")
 	public String getAllHouses(Map<String, Object> map, Integer pageNo) {
 		List<House> houses1 = houseInfoService.getAllHouses();
 		Integer number = (pageNo - 1) * 8;
 		List<House> houses = houseInfoService.getHouseByNum(number);
 
-		Integer totalCount = houses1.size();// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌￠崒妯猴拷鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�
+		Integer totalCount = houses1.size();// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌￠崒妯猴拷鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�?
 											// totalCount
 		Integer totalPage;
 		if (totalCount % 8 == 0) {
 			totalPage = totalCount / 8;
 		} else {
-			totalPage = (totalCount / 8 + 1); // 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴濐潟閿熻棄顦甸弻銊╂偄閸涘﹦浼勯梺鐟板殩閹凤拷
+			totalPage = (totalCount / 8 + 1); // 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴濐潟閿熻棄顦甸弻銊╂偄閸涘﹦浼勯梺鐟板殩閹凤�?
 												// totalPage
 		}
 		Page page = new Page(totalCount, totalPage, pageNo, houses);
@@ -309,22 +309,22 @@ public class HouseInfoHeadler {
 		return "houseall";
 	}
 
-	// 闂佸憡绻�缁舵岸寮幘缁樺亼闁挎稑瀚鐔兼煙瀹勬澘妲婚柣锔兼嫹
-	// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌熼悷鏉挎Щ闁搞倖鐗犻獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇叉闁靛牆妫楅鍓佺磼濞戞瑧娲撮柨鐔绘椤︾敻寮幘璇叉闁靛牆妫楅鍫曟⒑鐠恒劌鏋戦柡瀣煼楠炲繘鏁撻敓锟�
-	// 闂佸憡绻�缁舵岸寮幘缁樺亼闁挎稑瀚鐔兼煙瀹勬澘妲婚柣锔诲墴閺屻劑鎮㈤幆鏉款嚋闂佸憡鍨崐鏍拷姘愁潐閵囧嫰鏁撻敓锟�
+	// 闂佸憡绻�缁舵岸寮幘缁樺亼闁挎稑�?�鐔兼煙瀹勬澘妲婚柣锔兼�?
+	// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌熼悷鏉挎Щ闁搞�?�鐗犻獮蹇涙倻閼恒儲娅㈤梺鍝勫�堕崐鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佸綊顥撻崗姗�寮幘璇叉闁靛牆妫楅鍓佺磼濞戞瑧娲撮柨鐔绘椤︾敻寮幘璇叉闁靛牆妫楅鍫曟⒑鐠恒劌鏋戦柡�?�煼楠炲繘鏁撻敓锟�?
+	// 闂佸憡绻�缁舵岸寮幘缁樺亼闁挎稑�?�鐔兼煙瀹勬澘妲婚柣锔诲墴閺屻劑鎮㈤幆鏉款嚋闂佸憡鍨崐鏍拷姘愁潐閵囧嫰鏁撻敓锟�
 	@RequestMapping("/houseType")
 	public String getHouseByType(Map<String, Object> map, Integer pageNo) {
 		List<House> houses1 = houseInfoService.getHouseByTypeAll();
 		Integer number = (pageNo - 1) * 8;
 		List<House> houses = houseInfoService.getHouseByType(number);
 
-		Integer totalCount = houses1.size();// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌￠崒妯猴拷鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�
+		Integer totalCount = houses1.size();// 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴ｅГ閺呮悂鏌￠崒妯猴拷鏍拷姘秺閺屻劑鎮㈤崨濠勪紕闂佺懓鍤栭幏锟�?
 											// totalCount
 		Integer totalPage;
 		if (totalCount % 8 == 0) {
 			totalPage = totalCount / 8;
 		} else {
-			totalPage = (totalCount / 8 + 1); // 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴濐潟閿熻棄顦甸弻銊╂偄閸涘﹦浼勯梺鐟板殩閹凤拷
+			totalPage = (totalCount / 8 + 1); // 闂備浇娉曢崰鎰板几婵犳艾绠柣鎴濐潟閿熻棄顦甸弻銊╂偄閸涘﹦浼勯梺鐟板殩閹凤�?
 												// totalPage
 		}
 		Page page = new Page(totalCount, totalPage, pageNo, houses);
@@ -341,7 +341,7 @@ public class HouseInfoHeadler {
 		return "FindMap";
 	}
 
-	// 濠碘槅鍨界换婵嬪极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙偪椤栵絽娈�
+	// 濠碘槅鍨界换婵嬪极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇涙偪椤栵絽娈�?
 	@RequestMapping(value = "/getHouseByKey1")
 	public void getHouseByKey1(@Param(value = "keyName") String keyName, HttpServletResponse response) {
 
@@ -371,7 +371,7 @@ public class HouseInfoHeadler {
 		}
 	}
 
-	// 婵＄偑鍊楅弫濠氬极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇旑槹鎼存稐绮甸梻浣芥硶閸犳劙寮告繝姘闁绘垼濮ら弲鎼佹煛閸屾ê锟芥牜锟芥艾缍婇弻銊╂偄閸涘﹦浼勯梺褰掝棑閸忔﹢寮幘璇叉闁靛牆妫楅鍫曟⒑鐠恒劌鏋戦柡瀣煼楠炲繘鏁撻敓锟�
+	// 婵＄偑鍊楅弫濠氬极閹捐妫橀柕鍫濇椤忓爼姊虹捄銊ユ瀾闁哄顭烽獮蹇旑槹鎼存稐绮甸梻浣芥硶閸犳劙寮告繝姘闁绘垼濮ら弲鎼佹煛閸屾ê锟芥牜锟芥艾缍婇弻銊╂偄閸涘﹦浼勯梺褰掝棑閸忔﹢寮幘璇叉闁靛牆妫楅鍫曟⒑鐠恒劌鏋戦柡瀣煼楠炲繘鏁撻敓锟�?
 	@RequestMapping("/index")
 	public String getByType(Map<String, Object> map) {
 		List<House> Types = houseInfoService.getByType();
@@ -389,10 +389,10 @@ public class HouseInfoHeadler {
 	@RequestMapping("/getall")
 	public void getNamePut(HttpServletRequest request, HttpServletResponse response, String keyName,
 			Map<String, Object> map) {
-		// 从js传的参数放到域中 先判断1 和 4
+		// 从js传的参数放到域中 先判�?1 �? 4
 		String v1 = null; // 地区
 		String v22 = null;// 租金
-		String v33 = null;// 室
+		String v33 = null;// �?
 		String v44 = null;// 装修情况
 
 		Integer v2 = 0;
@@ -420,22 +420,22 @@ public class HouseInfoHeadler {
 		if (v22.equals("不限")) {
 			v2 = null;
 			v21 = null;
-		} else if (v22.equals("500元以下")) {
+		} else if (v22.equals("500元以�?")) {
 			v2 = 0;
 			v21 = 500;
-		} else if (v22.equals("500-1000元")) {
+		} else if (v22.equals("500-1000�?")) {
 			v2 = 500;
 			v21 = 1000;
-		} else if (v22.equals("1000-1500元")) {
+		} else if (v22.equals("1000-1500�?")) {
 			v2 = 1000;
 			v21 = 1500;
-		} else if (v22.equals("1500-2000元")) {
+		} else if (v22.equals("1500-2000�?")) {
 			v2 = 1500;
 			v21 = 2000;
-		} else if (v22.equals("2000-3000元")) {
+		} else if (v22.equals("2000-3000�?")) {
 			v2 = 2000;
 			v21 = 3000;
-		} else if (v22.equals("3000-4500元")) {
+		} else if (v22.equals("3000-4500�?")) {
 			v2 = 3000;
 			v21 = 4500;
 		} else {
@@ -445,7 +445,7 @@ public class HouseInfoHeadler {
 		// 厅室判断
 		if (v33.equals("不限")) {
 			v3 = null;
-		} else if (v33.equals("一室")) {
+		} else if (v33.equals("�?�?")) {
 			v3 = 1;
 		} else if (v33.equals("二室")) {
 			v3 = 2;
@@ -461,11 +461,11 @@ public class HouseInfoHeadler {
 			v4 = null;
 		} else if (v44.equals("毛坯")) {
 			v4 = 1;
-		} else if (v44.equals("简单装修")) {
+		} else if (v44.equals("�?单装�?")) {
 			v4 = 2;
 		} else if (v44.equals("中等装修")) {
 			v4 = 3;
-		} else if (v44.equals("精装修")) {
+		} else if (v44.equals("精装�?")) {
 			v4 = 4;
 		} else if (v44.equals("豪华装修")) {
 			v4 = 5;

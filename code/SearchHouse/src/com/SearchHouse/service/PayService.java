@@ -1,8 +1,8 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
-import com.gaobo.pojo.Pay;
+import com.SearchHouse.pojo.Pay;
 
 public interface PayService {
 	public List<Pay> getAllPays();

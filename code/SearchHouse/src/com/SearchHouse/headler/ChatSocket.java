@@ -1,4 +1,5 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
+/*package com.gaobo.headler;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,11 +33,11 @@ public class ChatSocket {
   private Gson gson = new Gson();
 
   
-  /**
+  *//**
    * 打开通道时调用
    * @param session
    * @throws IOException 
-   */
+   *//*
   @SuppressWarnings("unused")
   @OnOpen
   public void open(Session session) throws Exception {
@@ -54,12 +55,12 @@ public class ChatSocket {
     message.setNames(names);
     broadcast(sockets, gson.toJson(message));
   }
-  /**
+  *//**
    * 发送消息时调用
    * @param session
    * @param message
    * @throws IOException 
-   */
+   *//*
   @OnMessage
   public void receive(Session session,String msg) throws Exception {
     ContenVo contenVo = gson.fromJson(msg, ContenVo.class);
@@ -88,11 +89,11 @@ public class ChatSocket {
   }
 
   
-  /**
+  *//**
    * 关闭网页时调用
    * @param session
    * @throws IOException 
-   */
+   *//*
   @OnClose
   public void close(Session session) throws Exception {
     sockets.remove(this);
@@ -104,13 +105,13 @@ public class ChatSocket {
 
     broadcast(sockets, gson.toJson(message));
   }
-  /**
+  *//**
    * 群聊时将消息循环推送到前台
    * @param chatSockets
    * @param msg
    * @throws IOException
    * @throws CloneNotSupportedException 
-   */
+   *//*
   public void broadcast(Set<ChatSocket> chatSockets, String msg) throws Exception {
     for (ChatSocket chatSocket : chatSockets) { 
     	System.out.println(msg);
@@ -120,3 +121,4 @@ public class ChatSocket {
   
   
 }
+*/

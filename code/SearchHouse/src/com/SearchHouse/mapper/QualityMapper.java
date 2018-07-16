@@ -1,6 +1,6 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
-import com.gaobo.pojo.Quality;
+import com.SearchHouse.pojo.Quality;
 
 public interface QualityMapper {
 	

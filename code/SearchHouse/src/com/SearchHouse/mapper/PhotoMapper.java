@@ -1,6 +1,6 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
-import com.gaobo.pojo.Photo;
+import com.SearchHouse.pojo.Photo;
 
 public interface PhotoMapper {
 	public void addPhoto(Photo photo);

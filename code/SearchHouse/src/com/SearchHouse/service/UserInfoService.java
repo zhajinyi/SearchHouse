@@ -1,9 +1,9 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
-import com.gaobo.pojo.Quality;
-import com.gaobo.pojo.UserInfo;
+import com.SearchHouse.pojo.Quality;
+import com.SearchHouse.pojo.UserInfo;
 
 public interface UserInfoService {
 

@@ -1,4 +1,4 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.CompareMapper;
-import com.gaobo.pojo.Compare;
-import com.gaobo.service.CompareService;
+import com.SearchHouse.mapper.CompareMapper;
+import com.SearchHouse.pojo.Compare;
+import com.SearchHouse.service.CompareService;
 
 @Service
 @Transactional

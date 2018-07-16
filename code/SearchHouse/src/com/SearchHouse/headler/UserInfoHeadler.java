@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,9 +23,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.gaobo.pojo.Quality;
-import com.gaobo.pojo.UserInfo;
-import com.gaobo.service.UserInfoService;
+import com.SearchHouse.pojo.Quality;
+import com.SearchHouse.pojo.UserInfo;
+import com.SearchHouse.service.UserInfoService;
 
 @Controller
 public class UserInfoHeadler {

@@ -1,9 +1,9 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
 import java.util.List;
 
-import com.gaobo.pojo.Indent;
-import com.gaobo.pojo.UserInfo;
+import com.SearchHouse.pojo.Indent;
+import com.SearchHouse.pojo.UserInfo;
 
 public interface IndentMapper {
 	// Ôö

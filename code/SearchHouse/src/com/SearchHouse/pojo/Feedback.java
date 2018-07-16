@@ -1,4 +1,4 @@
-package com.gaobo.pojo;
+package com.SearchHouse.pojo;
 
 public class Feedback {
 

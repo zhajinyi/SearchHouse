@@ -1,8 +1,8 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
 import java.util.List;
 
-import com.gaobo.pojo.BedRoom;
+import com.SearchHouse.pojo.BedRoom;
 
 public interface BedroomService {
 	public List<BedRoom> getAllBedroom();

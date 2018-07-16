@@ -1,8 +1,8 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
 import java.util.List;
 
-import com.gaobo.pojo.HouseSetType;
+import com.SearchHouse.pojo.HouseSetType;
 
 public interface HouseSetTypeMapper {
 	public List<HouseSetType> getAllHouseType();

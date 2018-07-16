@@ -1,6 +1,6 @@
-package com.gaobo.service;
+package com.SearchHouse.service;
 
-import com.gaobo.pojo.PriceContain;
+import com.SearchHouse.pojo.PriceContain;
 
 public interface PriceContainsService {
 	public void addPri(PriceContain priceContain);

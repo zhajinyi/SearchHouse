@@ -1,6 +1,6 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
-import com.gaobo.pojo.PriceContain;
+import com.SearchHouse.pojo.PriceContain;
 
 public interface PriceContainsMapper {
 	public void addPri(PriceContain priceContain);

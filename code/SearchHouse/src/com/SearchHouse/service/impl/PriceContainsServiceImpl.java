@@ -1,13 +1,13 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.PriceContainsMapper;
-import com.gaobo.pojo.PriceContain;
-import com.gaobo.service.PriceContainsService;
+import com.SearchHouse.mapper.PriceContainsMapper;
+import com.SearchHouse.pojo.PriceContain;
+import com.SearchHouse.service.PriceContainsService;
 
 @Service
 @Transactional

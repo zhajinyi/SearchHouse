@@ -1,8 +1,8 @@
-package com.gaobo.mapper;
+package com.SearchHouse.mapper;
 
 import java.util.List;
 
-import com.gaobo.pojo.Pay;
+import com.SearchHouse.pojo.Pay;
 
 public interface PayMapper {
 	public List<Pay> getAllPays();

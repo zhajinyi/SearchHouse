@@ -1,4 +1,4 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import java.util.List;
 
@@ -8,13 +8,13 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.CollectMapper;
-import com.gaobo.mapper.HouseMapper;
-import com.gaobo.mapper.UserInfoMapper;
-import com.gaobo.pojo.Collect;
-import com.gaobo.pojo.House;
-import com.gaobo.pojo.UserInfo;
-import com.gaobo.service.CollectService;
+import com.SearchHouse.mapper.CollectMapper;
+import com.SearchHouse.mapper.HouseMapper;
+import com.SearchHouse.mapper.UserInfoMapper;
+import com.SearchHouse.pojo.Collect;
+import com.SearchHouse.pojo.House;
+import com.SearchHouse.pojo.UserInfo;
+import com.SearchHouse.service.CollectService;
 
 @Service
 @Transactional

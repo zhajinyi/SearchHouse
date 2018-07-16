@@ -1,4 +1,4 @@
-package com.gaobo.headler;
+package com.SearchHouse.headler;
 
 import java.sql.Time;
 import java.text.ParseException;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.gaobo.pojo.House;
-import com.gaobo.pojo.Orders;
-import com.gaobo.pojo.UserInfo;
-import com.gaobo.service.HouseInfoService;
-import com.gaobo.service.OrdersService;
-import com.gaobo.service.UserInfoService;
+import com.SearchHouse.pojo.House;
+import com.SearchHouse.pojo.Orders;
+import com.SearchHouse.pojo.UserInfo;
+import com.SearchHouse.service.HouseInfoService;
+import com.SearchHouse.service.OrdersService;
+import com.SearchHouse.service.UserInfoService;
 
 @Controller
 public class OrdersHeadler {

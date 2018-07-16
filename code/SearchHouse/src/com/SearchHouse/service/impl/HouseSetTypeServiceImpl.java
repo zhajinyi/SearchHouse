@@ -1,4 +1,4 @@
-package com.gaobo.service.impl;
+package com.SearchHouse.service.impl;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gaobo.mapper.HouseSetTypeMapper;
-import com.gaobo.pojo.HouseSetType;
-import com.gaobo.service.HouseSetTypeService;
+import com.SearchHouse.mapper.HouseSetTypeMapper;
+import com.SearchHouse.pojo.HouseSetType;
+import com.SearchHouse.service.HouseSetTypeService;
 
 @Service
 @Transactional
