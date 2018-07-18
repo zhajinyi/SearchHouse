@@ -42,18 +42,18 @@
   
    <property name="mappingResources">
    <list>
-   <value>com/geminno/pojo/Admin.hbm.xml</value>
-   <value>com/geminno/pojo/BedRoom.hbm.xml</value>
-   <value>com/geminno/pojo/Fitment.hbm.xml</value>
-   <value>com/geminno/pojo/House.hbm.xml</value>
-   <value>com/geminno/pojo/HouseSetType.hbm.xml</value>
-   <value>com/geminno/pojo/HouseStatus.hbm.xml</value>
-   <value>com/geminno/pojo/Limit.hbm.xml</value>
-   <value>com/geminno/pojo/Message.hbm.xml</value>
-   <value>com/geminno/pojo/Pay.hbm.xml</value>
-   <value>com/geminno/pojo/User.hbm.xml</value>
-    <value>com/geminno/pojo/Quality.hbm.xml</value>
-     <value>com/geminno/pojo/Indent.hbm.xml</value>
+   <value>com/SearchHouse/pojo/Admin.hbm.xml</value>
+   <value>com/SearchHouse/pojo/BedRoom.hbm.xml</value>
+   <value>com/SearchHouse/pojo/Fitment.hbm.xml</value>
+   <value>com/SearchHouse/pojo/House.hbm.xml</value>
+   <value>com/SearchHouse/pojo/HouseSetType.hbm.xml</value>
+   <value>com/SearchHouse/pojo/HouseStatus.hbm.xml</value>
+   <value>com/SearchHouse/pojo/Limit.hbm.xml</value>
+   <value>com/SearchHouse/pojo/Message.hbm.xml</value>
+   <value>com/SearchHouse/pojo/Pay.hbm.xml</value>
+   <value>com/SearchHouse/pojo/User.hbm.xml</value>
+    <value>com/SearchHouse/pojo/Quality.hbm.xml</value>
+     <value>com/SearchHouse/pojo/Indent.hbm.xml</value>
    </list>
    </property>
 </bean>
@@ -75,7 +75,7 @@
 </tx:advice>
 
 <aop:config>
-<aop:pointcut id="testService" expression="execution(* com.geminno.service.impl.*.*(..))"/>
+<aop:pointcut id="testService" expression="execution(* com.SearchHouse.service.impl.*.*(..))"/>
 <aop:advisor advice-ref="advice" pointcut-ref="testService"/> 
 
 </aop:config>

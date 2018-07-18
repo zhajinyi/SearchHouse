@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-8-8 18:55:41 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.geminno.pojo.User" table="userinfo">
+    <class name="com.SearchHouse.pojo.User" table="userinfo">
         <id name="userId" type="java.lang.String">
             <column name="USER_ID" />
             <generator class="native" />
@@ -54,13 +54,13 @@
             <key>
                 <column name="USER_ID_FK" />
             </key>
-            <one-to-many class="com.geminno.pojo.House" />
+            <one-to-many class="com.SearchHouse.pojo.House" />
         </set>
         <set name="msgs" table="message" inverse="false" lazy="false">
             <key>
                 <column name="USER_ID_FK" />
             </key>
-            <one-to-many class="com.geminno.pojo.Message" />
+            <one-to-many class="com.SearchHouse.pojo.Message" />
         </set> -->
     </class>
 </hibernate-mapping>

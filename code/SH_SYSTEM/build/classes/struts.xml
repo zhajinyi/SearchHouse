@@ -7,85 +7,85 @@
 <package name="default" namespace="/" extends="struts-default">
 
 <!-- admin -->
-<action name="getAdminById" class="com.genminno.action.AdminAction" method="getAdminById">
+<action name="getAdminById" class="com.SearchHouse.action.AdminAction" method="getAdminById">
 <result name="login">/page/test.jsp</result>
 <result name="AdminIndex">/page/html/AdminIndex.jsp</result>
 </action>
 
-<action name="queryAllAdmin" class="com.genminno.action.AdminAction" method="queryAllAdmin">
+<action name="queryAllAdmin" class="com.SearchHouse.action.AdminAction" method="queryAllAdmin">
 <result name="listAdmin">/page/html/AdminList.jsp</result></action>
 
-<action name="deleteAdmin" class="com.genminno.action.AdminAction" method="deleteAdmin">
+<action name="deleteAdmin" class="com.SearchHouse.action.AdminAction" method="deleteAdmin">
 <result name="deleteadmin" type="chain">queryAllAdmin</result>
 </action>
 
-<action name="updateAdminInit" class="com.genminno.action.AdminAction" method="updateAdminInit">
+<action name="updateAdminInit" class="com.SearchHouse.action.AdminAction" method="updateAdminInit">
 <result name="updateinit" >
 /page/html/AdminInfo.jsp
 </result></action>
 
 
-<action name="updateAdmin" class="com.genminno.action.AdminAction" method="updateAdmin" >
+<action name="updateAdmin" class="com.SearchHouse.action.AdminAction" method="updateAdmin" >
 <result name="updateadmin" type="chain">queryAllAdmin</result></action>
 
 
 <!-- house -->       
-<action name="queryAllhouses" class="com.genminno.action.HouseAction" method="queryAllhouses">
+<action name="queryAllhouses" class="com.SearchHouse.action.HouseAction" method="queryAllhouses">
 <result name="list">/page/html/NewApply.jsp</result></action>  
-<action name="queryAllhouses2" class="com.genminno.action.HouseAction" method="queryAllhouses2">
+<action name="queryAllhouses2" class="com.SearchHouse.action.HouseAction" method="queryAllhouses2">
 <result name="list2">/page/html/DatedInfo.jsp</result></action> 
-<action name="queryAllhouses3" class="com.genminno.action.HouseAction" method="queryAllhouses3">
+<action name="queryAllhouses3" class="com.SearchHouse.action.HouseAction" method="queryAllhouses3">
 <result name="list3">/page/html/AllHouse.jsp</result></action>  
         
-<action name="getHouseById" class="com.genminno.action.HouseAction" method="getHouseById">
+<action name="getHouseById" class="com.SearchHouse.action.HouseAction" method="getHouseById">
 </action>  
       
-<action name="updateHouse" class="com.genminno.action.HouseAction" method="updateHouse">
+<action name="updateHouse" class="com.SearchHouse.action.HouseAction" method="updateHouse">
 <result name="update" type="chain">queryAllhouses</result></action>
 
-<action name="unchecked"  class="com.genminno.action.HouseAction" method="unchecked">
+<action name="unchecked"  class="com.SearchHouse.action.HouseAction" method="unchecked">
 <result name="update" type="chain">queryAllhouses</result></action>
 
 
 <!-- user -->
-<action name="getAllUsers" class="com.genminno.action.UserAction" method="getAllUsers">
+<action name="getAllUsers" class="com.SearchHouse.action.UserAction" method="getAllUsers">
 <result name="listusers">/page/html/UserManage.jsp</result>
 </action>
-<action name="getUserById" class="com.genminno.action.UserAction" method="getUserById">
+<action name="getUserById" class="com.SearchHouse.action.UserAction" method="getUserById">
 
 </action>
 
 
 <!-- indent -->
-<action name="queryAllIndents" class="com.genminno.action.IndentAction" method="queryAllIndents">
+<action name="queryAllIndents" class="com.SearchHouse.action.IndentAction" method="queryAllIndents">
 
 <result name="listindents">/page/html/HistoryDeal.jsp</result>
 </action>
 
-<action name="getIndentsById" class="com.genminno.action.IndentAction" method="getIndentsById">
+<action name="getIndentsById" class="com.SearchHouse.action.IndentAction" method="getIndentsById">
 
 </action>
 
 
 <!-- email -->
-<action name="sendmail" class="com.genminno.action.EmailBindHandler" method="sendmail">
+<action name="sendmail" class="com.SearchHouse.action.EmailBindHandler" method="sendmail">
 
 </action>
 <!-- phone -->
-<action name="sendphone" class="com.genminno.action.SendPhoneMsg" method="sendphone">
+<action name="sendphone" class="com.SearchHouse.action.SendPhoneMsg" method="sendphone">
 
 </action>
 
  
  
  <!-- quality -->
- <action name="queryAllQualities" class="com.genminno.action.QualityAction" method="queryAllQualities">
+ <action name="queryAllQualities" class="com.SearchHouse.action.QualityAction" method="queryAllQualities">
  <result name="listqualities">
  /page/html/Identification.jsp
  </result>
  
  </action>
- <action name="updateQuality" class="com.genminno.action.QualityAction" method="updateQuality">
+ <action name="updateQuality" class="com.SearchHouse.action.QualityAction" method="updateQuality">
  <result name="updatequality" type="chain">
   queryAllQualities
  </result>

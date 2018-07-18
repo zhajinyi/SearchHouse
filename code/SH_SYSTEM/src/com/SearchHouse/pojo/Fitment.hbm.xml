@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-8-8 18:55:41 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.geminno.pojo.Fitment" table="fitment">
+    <class name="com.SearchHouse.pojo.Fitment" table="fitment">
         <id name="fitmentId" type="java.lang.Integer">
             <column name="FITMENT_ID" />
             <generator class="native" />
