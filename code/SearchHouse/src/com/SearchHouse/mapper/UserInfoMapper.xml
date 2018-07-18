@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.gaobo.mapper.UserInfoMapper">
+<mapper namespace="com.SearchHouse.mapper.UserInfoMapper">
 
 	<!-- 房屋结果集 -->
 	<resultMap type="House" id="HouseResultMap">

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gaobo.mapper.IndentMapper">
+<mapper namespace="com.SearchHouse.mapper.IndentMapper">
 	<!-- 增 -->
 	<insert id="addIndent" parameterType="Indent"  useGeneratedKeys="true" keyProperty="indentId">
 		insert into indent(USER_ID_FK,HOUSE_ID_FK,INPHONE,TIME_START,TIME_END)

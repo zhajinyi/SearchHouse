@@ -13,7 +13,7 @@
     <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.gaobo.headler.LoginServlet</servlet-class>
+    <servlet-class>com.SearchHouse.headler.LoginServlet</servlet-class>
   </servlet>
  <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>

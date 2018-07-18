@@ -1,5 +1,5 @@
 package com.SearchHouse.headler;
-/*package com.gaobo.headler;
+/*package com.SearchHouse.headler;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-import com.gaobo.pojo.ContenVo;
-import com.gaobo.pojo.Message;
+import com.SearchHouse.pojo.ContenVo;
+import com.SearchHouse.pojo.Message;
 import com.google.gson.Gson;
 
 @ServerEndpoint("/chatSocket")

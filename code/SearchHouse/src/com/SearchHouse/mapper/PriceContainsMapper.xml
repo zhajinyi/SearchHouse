@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gaobo.mapper.PriceContainsMapper">
+<mapper namespace="com.SearchHouse.mapper.PriceContainsMapper">
 	<insert id="addPri" parameterType="PriceContain">
 		insert into pricecontain(HOUSE_ID,PRICE_CONTAIN_NAME,PRICE_CONTAIN_ID)
 		values(#{houseId},#{priceContains},#{positon});

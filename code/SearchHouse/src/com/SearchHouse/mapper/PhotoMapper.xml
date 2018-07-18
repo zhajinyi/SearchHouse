@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gaobo.mapper.PhotoMapper">
+<mapper namespace="com.SearchHouse.mapper.PhotoMapper">
 	<insert id="addPhoto" parameterType="Photo">
 		insert into photo(PHOTO_ID,PHOTO_NAME,HOUSE_ID)
 		value(#{photoId},#{photoName},#{houseId});

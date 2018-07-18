@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gaobo.mapper.HouseLimitMapper">
+<mapper namespace="com.SearchHouse.mapper.HouseLimitMapper">
 
 	<resultMap type="Limit" id="limitResultMap">
 		<id property="limitIdFk" column="HOUSE_LIMIT_ID" />
