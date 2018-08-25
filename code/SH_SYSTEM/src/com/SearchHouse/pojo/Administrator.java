@@ -1,8 +1,8 @@
 package com.SearchHouse.pojo;
 
-public class Admin {
+public class Administrator {
 	
-	private String adminId;//管理员ID
+	private String adminID;//管理员ID
 	private Integer adminPWD;//管理员密码
 	private String adminNickName;//管理员昵称
 	private String adminEmail;//管理员邮箱；
@@ -10,16 +10,16 @@ public class Admin {
 	
 	
 	
-	public Admin(){
+	public Administrator(){
 		
 	}
 
 	public String getAdminId() {
-		return adminId;
+		return adminID;
 	}
 
 	public void setAdminId(String adminId) {
-		this.adminId = adminId;
+		this.adminID = adminId;
 	}
 
 	public Integer getAdminPWD() {
@@ -56,13 +56,13 @@ public class Admin {
 
 	@Override
 	public String toString() {
-		return "Admin [adminId=" + adminId + ", adminPWD=" + adminPWD + ", adminNickName=" + adminNickName
+		return "Admin [adminId=" + adminID + ", adminPWD=" + adminPWD + ", adminNickName=" + adminNickName
 				+ ", adminEmail=" + adminEmail + "]";
 	}
 
-	public Admin(String adminId, Integer adminPWD, String adminNickName, String adminEmail) {
+	public Administrator(String adminId, Integer adminPWD, String adminNickName, String adminEmail) {
 		super();
-		this.adminId = adminId;
+		this.adminID = adminId;
 		this.adminPWD = adminPWD;
 		this.adminNickName = adminNickName;
 		this.adminEmail = adminEmail;

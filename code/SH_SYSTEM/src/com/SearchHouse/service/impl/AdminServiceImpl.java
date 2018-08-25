@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.SearchHouse.dao.AdminDao;
-import com.SearchHouse.pojo.Admin;
+import com.SearchHouse.pojo.Administrator;
 import com.SearchHouse.service.AdminService;
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -22,7 +22,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void addAdmin(Admin admin) {
+	public void addAdmin(Administrator admin) {
 		// TODO Auto-generated method stub
 		admindao.addAdmin(admin);
 
@@ -35,19 +35,19 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void updateAdmin(Admin admin) {
+	public void updateAdmin(Administrator admin) {
 		// TODO Auto-generated method stub
 		admindao.updateAdmin(admin);
 	}
 
 	@Override
-	public Admin getAdminById(String adminId) {
+	public Administrator getAdminById(String adminId) {
 		// TODO Auto-generated method stub
 		return admindao.getAdminById(adminId);
 	}
 
 	@Override
-	public List<Admin> queryAllAdmin() {
+	public List<Administrator> queryAllAdmin() {
 		// TODO Auto-generated method stub
 		return admindao.queryAllAdmin();
 	}

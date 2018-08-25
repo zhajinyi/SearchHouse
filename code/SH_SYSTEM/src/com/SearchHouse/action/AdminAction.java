@@ -11,14 +11,14 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.SearchHouse.pojo.Admin;
+import com.SearchHouse.pojo.Administrator;
 import com.SearchHouse.service.AdminService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 
 @Controller
 @Scope("prototype")
-public class AdminAction implements ModelDriven<Admin>,ServletRequestAware {
+public class AdminAction implements ModelDriven<Administrator>,ServletRequestAware {
 	
 	
 	@Autowired
@@ -35,19 +35,19 @@ public class AdminAction implements ModelDriven<Admin>,ServletRequestAware {
 
 
 	HttpServletRequest request;
-	Admin admin;
+	Administrator admin;
 	
 	
 	@ModelAttribute
 	public void queryAdmins(){
-		List<Admin> admins=adminservice.queryAllAdmin();
+		List<Administrator> admins=adminservice.queryAllAdmin();
 		request.setAttribute("admins", admins);
 		System.out.println(admins);
 	}
 	@Override
-	public Admin getModel() {
+	public Administrator getModel() {
 		if(admin==null){
-			admin=new Admin();
+			admin=new Administrator();
 		}
 		return admin;
 	}
@@ -64,7 +64,7 @@ public class AdminAction implements ModelDriven<Admin>,ServletRequestAware {
 		Integer adminPWD=(Integer) request.getAttribute("adminPWD");
 		
 		System.out.println(adminId+":"+adminPWD);
-		Admin admin=adminservice.getAdminById(adminId);
+		Administrator admin=adminservice.getAdminById(adminId);
 		if(admin!=null&&adminPWD.equals(admin.getAdminPWD())){
 			request.getSession().setAttribute("admin",admin);
 			System.out.println(admin);
@@ -78,7 +78,7 @@ public class AdminAction implements ModelDriven<Admin>,ServletRequestAware {
 	
 	public String queryAllAdmin(){
 		
-		List<Admin> admins=adminservice.queryAllAdmin();
+		List<Administrator> admins=adminservice.queryAllAdmin();
 		request.setAttribute("admins", admins);
 		System.out.println(admins);
 		
@@ -103,7 +103,7 @@ public class AdminAction implements ModelDriven<Admin>,ServletRequestAware {
 		
 		String adminId=(String) request.getAttribute("adminId");
 		
-		Admin admin=adminservice.getAdminById(adminId);
+		Administrator admin=adminservice.getAdminById(adminId);
 		
 		Map<String,Object> request=(Map<String, Object>) ActionContext.getContext().get("request");
 		

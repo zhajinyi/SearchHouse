@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.SearchHouse.dao.UserInfoDao;
-import com.SearchHouse.pojo.User;
+import com.SearchHouse.pojo.User1;
 
 @Repository
 public class UserInfoImpl implements UserInfoDao{
@@ -30,7 +30,7 @@ public class UserInfoImpl implements UserInfoDao{
 	}
 
 	@Override
-	public void addUserInfo(User user) {
+	public void addUserInfo(User1 user) {
 		Session session=getSession();
 		session.save(user);
 		
@@ -39,31 +39,31 @@ public class UserInfoImpl implements UserInfoDao{
 	@Override
 	public void deleteUserInfo(String userId) {
 		Session session=getSession();
-		User user=(User) session.get(User.class, userId);
+		User1 user=(User1) session.get(User1.class, userId);
 		session.delete(user);
 	}
 
 	@Override
-	public void updateUserInfo(User user) {
+	public void updateUserInfo(User1 user) {
 		Session session=getSession();
 		session.update(user);
 		
 	}
 
 	@Override
-	public User getUserById(String userId) {
+	public User1 getUserById(String userId) {
 		Session session=getSession();
 		
-		User user=(User) session.get(User.class, userId);
+		User1 user=(User1) session.get(User1.class, userId);
 		
 		return user;
 	}
 
 	@Override
-	public List<User> getAllUsers() {
+	public List<User1> getAllUsers() {
 		Session session=getSession();
 		Query query=session.createQuery("from User");
-		List<User> users=query.list();
+		List<User1> users=query.list();
 		
 		return users;
 	}

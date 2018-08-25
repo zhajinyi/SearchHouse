@@ -6,7 +6,7 @@ import java.sql.Date;
 public class Indent {
 	
 	private Integer indentId;//租房编号
-	private User user;//用户id
+	private User1 user;//用户id
 	private House house;//房屋id
 	private String inPhone;//用户手机号
 	private Date timeStart;//起租日期
@@ -22,10 +22,10 @@ public class Indent {
 	public void setIndentId(Integer indentId) {
 		this.indentId = indentId;
 	}
-	public User getUser() {
+	public User1 getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(User1 user) {
 		this.user = user;
 	}
 	public House getHouse() {

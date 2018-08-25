@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.SearchHouse.pojo.Admin;
+import com.SearchHouse.pojo.Administrator;
 import com.SearchHouse.pojo.House;
 import com.SearchHouse.pojo.HouseStatus;
 import com.SearchHouse.service.HouseService;

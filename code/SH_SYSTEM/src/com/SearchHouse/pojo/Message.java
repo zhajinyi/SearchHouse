@@ -8,9 +8,9 @@ public class Message {
 	
 	private String msgtot;//ĞÅÏ¢ÄÚÈİ£»
 	
-	private Admin admin;
+	private Administrator admin;
 	
-	private User user;
+	private User1 user;
 	
 	private Message(){
 		
@@ -40,23 +40,23 @@ public class Message {
 		this.msgtot = msgtot;
 	}
 
-	public Admin getAdmin() {
+	public Administrator getAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(Admin admin) {
+	public void setAdmin(Administrator admin) {
 		this.admin = admin;
 	}
 
-	public User getUser() {
+	public User1 getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(User1 user) {
 		this.user = user;
 	}
 
-	public Message(Integer msgId, String msgtitle, String msgtot,Admin admin,User user) {
+	public Message(Integer msgId, String msgtitle, String msgtot,Administrator admin,User1 user) {
 		super();
 		this.msgId = msgId;
 		this.msgtitle = msgtitle;

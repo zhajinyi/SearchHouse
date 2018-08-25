@@ -9,7 +9,7 @@ public class Quality {
 	
 	private Integer qualitResult;//结果  个人 商家
 	
-	private User user;//用户编号
+	private User1 user;//用户编号
 	
 	public Quality(){
 		
@@ -55,11 +55,11 @@ public class Quality {
 		this.qualitResult = qualitResult;
 	}
 
-	public User getUser() {
+	public User1 getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(User1 user) {
 		this.user = user;
 	}
 

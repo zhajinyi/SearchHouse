@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.SearchHouse.dao.AdminDao;
-import com.SearchHouse.pojo.Admin;
+import com.SearchHouse.pojo.Administrator;
 
 @Repository
 public class AdminImpl implements AdminDao{
@@ -29,7 +29,7 @@ public class AdminImpl implements AdminDao{
 	}
 
 	@Override
-	public void addAdmin(Admin admin) {
+	public void addAdmin(Administrator admin) {
 		// TODO Auto-generated method stub
 		Session session=getSession();
 		session.save(admin);
@@ -39,32 +39,32 @@ public class AdminImpl implements AdminDao{
 	public void deleteAdmin(String adminId) {
 		// TODO Auto-generated method stub
 		Session session=getSession();
-		Admin admin=(Admin) session.get(Admin.class, adminId);
+		Administrator admin=(Administrator) session.get(Administrator.class, adminId);
 		session.delete(admin);
 	}
 
 	@Override
-	public void updateAdmin(Admin admin) {
+	public void updateAdmin(Administrator admin) {
 		// TODO Auto-generated method stub
 		Session session=getSession();
 		session.update(admin);
 	}
 
 	@Override
-	public Admin getAdminById(String adminId) {
+	public Administrator getAdminById(String adminId) {
 		// TODO Auto-generated method stub
 		
 		Session session=getSession();
-		Admin admin=(Admin) session.get(Admin.class, adminId);
+		Administrator admin=(Administrator) session.get(Administrator.class, adminId);
 		return admin;
 	}
 
 	@Override
-	public List<Admin> queryAllAdmin() {
+	public List<Administrator> queryAllAdmin() {
 		// TODO Auto-generated method stub
 		Session session=getSession();
 		Query query=session.createQuery("from Admin");
-		List<Admin> admins=query.list();
+		List<Administrator> admins=query.list();
 		
 		return admins;
 	}

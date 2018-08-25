@@ -35,7 +35,7 @@ public class House {
 	
 	private HouseStatus houseStatus;//·¿Îİ×´Ì¬±àºÅ
 	
-	private User user;//ÓÃ»§±àºÅ
+	private User1 user;//ÓÃ»§±àºÅ
 	
 	public House(){
 		
@@ -194,11 +194,11 @@ public class House {
 		this.houseStatus = houseStatus;
 	}
 
-	public User getUser() {
+	public User1 getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(User1 user) {
 		this.user = user;
 	}
 

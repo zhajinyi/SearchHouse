@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.SearchHouse.dao.UserInfoDao;
-import com.SearchHouse.pojo.User;
+import com.SearchHouse.pojo.User1;
 import com.SearchHouse.service.UserService;
 @Service
 public class UserInfoServiceImpl implements UserService {
@@ -24,7 +24,7 @@ public class UserInfoServiceImpl implements UserService {
 	}
 
 	@Override
-	public void addUserInfo(User user) {
+	public void addUserInfo(User1 user) {
 		// TODO Auto-generated method stub
 		userinfodao.addUserInfo(user);
 	}
@@ -36,19 +36,19 @@ public class UserInfoServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUserInfo(User user) {
+	public void updateUserInfo(User1 user) {
 		// TODO Auto-generated method stub
 		userinfodao.updateUserInfo(user);
 	}
 
 	@Override
-	public User getUserById(String userId) {
+	public User1 getUserById(String userId) {
 		// TODO Auto-generated method stub
 		return userinfodao.getUserById(userId);
 	}
 
 	@Override
-	public List<User> getAllUsers() {
+	public List<User1> getAllUsers() {
 		// TODO Auto-generated method stub
 		return userinfodao.getAllUsers();
 	}

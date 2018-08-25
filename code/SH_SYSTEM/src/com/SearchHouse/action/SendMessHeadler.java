@@ -16,11 +16,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.SearchHouse.pojo.User;
+import com.SearchHouse.pojo.User1;
 @Controller
 public class SendMessHeadler {
 	@RequestMapping(value = "/sendPhone", method = RequestMethod.POST)
-	public void sendPhone(User user,Map<String,Object> map,HttpServletRequest request,HttpServletResponse response){
+	public void sendPhone(User1 user,Map<String,Object> map,HttpServletRequest request,HttpServletResponse response){
 		//从jsp页面获取注册的手机号�?
 		String phone=request.getParameter("phoneNumber");
 		 //设置响应格式UTF8

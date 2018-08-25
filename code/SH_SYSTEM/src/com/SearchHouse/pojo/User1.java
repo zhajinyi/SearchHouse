@@ -7,7 +7,7 @@ import java.util.Set;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
-public class User {
+public class User1 {
 	
 
 	private String userId;//账号
@@ -43,7 +43,7 @@ public class User {
 	
 	private Set<Message> msgs;//信息编号
 */
-	public User(){
+	public User1(){
 		
 		
 	}
@@ -51,7 +51,7 @@ public class User {
 	
 
 	//只有一个id的构造方法
-	public User(String userId) {
+	public User1(String userId) {
 		super();
 		this.userId = userId;
 	}
@@ -185,7 +185,7 @@ public class User {
 
 
 
-	public User(String userId, String userName, String userPassword, String phoneNumber, String userMail,
+	public User1(String userId, String userName, String userPassword, String phoneNumber, String userMail,
 			String realName, String userSex, Integer userAge, Integer userCard, String userPhoto, Date userBirthday,
 			String address, String qualityRating, Integer userActive) {
 		super();

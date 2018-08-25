@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.SearchHouse.pojo.House;
-import com.SearchHouse.pojo.User;
+import com.SearchHouse.pojo.User1;
 import com.SearchHouse.service.UserService;
 import com.google.gson.Gson;
 import com.opensymphony.xwork2.ActionContext;
@@ -23,13 +23,13 @@ import com.opensymphony.xwork2.ModelDriven;
 
 @Controller
 @Scope("prototype")
-public class UserAction implements ModelDriven<User>,ServletRequestAware,ServletResponseAware {
+public class UserAction implements ModelDriven<User1>,ServletRequestAware,ServletResponseAware {
 	@Autowired
 	UserService userservice;
 	HttpServletRequest request;
 	HttpServletResponse response;
 	
-	User user;
+	User1 user;
 	
 
 	public UserService getUserservice() {
@@ -69,9 +69,9 @@ public class UserAction implements ModelDriven<User>,ServletRequestAware,Servlet
 	}
 
 	@Override
-	public User getModel() {
+	public User1 getModel() {
 		if(user==null){
-			user=new User();
+			user=new User1();
 		}
 		return user;
 		}
@@ -81,7 +81,7 @@ public class UserAction implements ModelDriven<User>,ServletRequestAware,Servlet
 		
 		
 		
-		List<User> users=userservice.getAllUsers();
+		List<User1> users=userservice.getAllUsers();
 		Map<String,Object> request=(Map<String, Object>) ActionContext.getContext().get("request");
 		request.put("users", users);
 		System.out.println(users);
@@ -93,7 +93,7 @@ public class UserAction implements ModelDriven<User>,ServletRequestAware,Servlet
 		
 		String userId=request.getParameter("userId");
 		
-		User user=userservice.getUserById(userId);
+		User1 user=userservice.getUserById(userId);
 		System.out.println(user);
 		
 		response.setContentType("text/html;charset=utf-8");

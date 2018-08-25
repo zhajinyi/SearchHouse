@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.SearchHouse.pojo.Admin;
+import com.SearchHouse.pojo.Administrator;
 import com.SearchHouse.pojo.House;
 import com.SearchHouse.pojo.HouseStatus;
 import com.SearchHouse.pojo.Quality;
-import com.SearchHouse.pojo.User;
+import com.SearchHouse.pojo.User1;
 import com.SearchHouse.service.QualityService;
 import com.SearchHouse.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
@@ -120,11 +120,11 @@ public class QualityAction implements ModelDriven<Quality>,ServletRequestAware,S
 		quality.setQualitResult(1);
 		qualityservice.updateQuality(quality);
 		if(quality.getQualityNum().equals("")){
-			User user=userService.getUserById(quality.getUser().getUserId());
+			User1 user=userService.getUserById(quality.getUser().getUserId());
 			user.setQualityRating("个人");
 			userService.updateUserInfo(user);
 		}else{
-			User user=userService.getUserById(quality.getUser().getUserId());
+			User1 user=userService.getUserById(quality.getUser().getUserId());
 			user.setQualityRating("商户");
 			userService.updateUserInfo(user);
 		}
