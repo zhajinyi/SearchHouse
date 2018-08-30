@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.SearchHouse.mapper.IdentificationMapper">
+
+	<!-- 插入数据； -->
+	<insert id="addIdentification" parameterType="Identification">
+		insert into
+		identification(IDENTIFICATION_ID,PHOTO_PATH,USERINFO_ID_FK,PHOTO_TYPE,IDENTIFICATION_STSTUS)
+		values(#{identId},#{photoPath},#{userInfo.userId},#{photoType},#{identstatus});
+	</insert>
+
+	<!-- 删除数据 -->
+	<delete id="deleteIdentification" parameterType="Integer">
+		delete from identification where IDENTIFICATION_ID=#{identId};
+	</delete>
+
+	<!-- 修改数据 -->
+	<update id="updateIdentification" parameterType="Identification">
+		update identification set
+		IDENTIFICATION_ID=#{identId},PHOTO_PATH=#{photoPath},USERINFO_ID_FK=#{userInfo.userId},
+		PHOTO_TYPE=#{photoType},IDENTIFICATION_STSTUS=#{identstatus};
+	</update>
+
+
+
+	<resultMap type="Identification" id="IdentresultMap"></resultMap>
+	<!-- 查询单个记录 -->
+	<select id="IdentificationMapper" parameterType="Integer"
+		resultMap="IdentresultMap">
+		select * from identification where IDENTIFICATION_ID=#{identId};
+	</select>
+
+	<!-- 查询所有的记录 -->
+</mapper>

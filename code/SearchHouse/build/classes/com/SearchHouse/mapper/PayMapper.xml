@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SearchHouse.mapper.PayMapper">
+
+	<resultMap type="Pay" id="payResultMap">
+		<id property="payId" column="PAY_ID" />
+		<result property="payName" column="PAY_TYPE" />
+	</resultMap>
+
+	<select id="getAllPays" resultMap="payResultMap">
+		select * from pay;
+	</select>
+
+	<select id="getPayById" resultMap="payResultMap">
+		select * from pay where PAY_ID=#{payId};
+	</select>
+
+</mapper>
+
